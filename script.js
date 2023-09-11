@@ -32,6 +32,10 @@ function generatePassword (){
     alert("you must choose at least one type of character in order to generate a password") 
     window.location.reload()
   }
+  for(let i=0; i<parseInt(length); i++){
+    result+=userchoices [Math.floor(Math.random()*userchoices.length)]
+  }
+  return result 
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
