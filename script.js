@@ -11,6 +11,27 @@ function generatePassword (){
   while(length <8 ||length >128 || isNaN(length) || length==="" ){
     length= prompt ("please enter a password between 8 and 128 characters")
   }
+  var uppercaseconfirm= confirm("would you like uppercase letters on your password?")
+  var lowercaseconfirm= confirm("would you like lowercase letters on your password?")
+  var numbersconfrim= confirm("would you like numbers on your password?")
+  var specialcharconfirm= confirm("would you like special characters on your password?")
+
+  if(uppercaseconfirm){
+    userchoices=userchoices.concat(uppercase)
+  }
+  if(lowercaseconfirm){
+    userchoices=userchoices.concat(lowercase)
+  }
+  if(numbersconfrim){
+    userchoices=userchoices.concat(numbers)
+  }
+  if(specialcharconfirm){
+    userchoices=userchoices.concat(specialchar)
+  }
+  if(uppercaseconfirm==false && lowercaseconfirm==false && numbersconfrim==false && specialcharconfirm==false){
+    alert("you must choose at least one type of character in order to generate a password") 
+    window.location.reload()
+  }
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
